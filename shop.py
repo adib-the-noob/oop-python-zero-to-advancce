@@ -24,6 +24,9 @@ class Item:
     def apply_discount(self):
         self.price = self.price * self.pay_rate
 
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity})"
+
 item1 = Item(
     name="Phone",
     price=1000,
@@ -56,13 +59,14 @@ item2 = Item(
 print(item1.price)
 
 print(item2.price)
-print("*********************")
-for instance in Item.all_classes:
-    print(instance.name)
-    print(instance.price)
-    print(instance.quantity)
-    print(instance.calculate_total_price())
-    print(instance.pay_rate)
-    print(instance.apply_discount())
-    print(instance.price)
-    print("*********************")
+print(Item.all_classes)
+# print("*********************")
+# for instance in Item.all_classes:
+#     print(instance.name)
+#     print(instance.price)
+#     print(instance.quantity)
+#     print(instance.calculate_total_price())
+#     print(instance.pay_rate)
+#     print(instance.apply_discount())
+#     print(instance.price)
+#     print("*********************")
