@@ -1,6 +1,7 @@
 class Item:
 
     pay_rate = 0.8 # 20% discount on all items - this is a magic attribute / class attribute
+    all_classes = [] # this is a magic attribute / class attribute
 
     def __init__(self, name: str, price: int, quantity: int):
 
@@ -12,6 +13,9 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
+
+        Item.all_classes.append(self)
+
         print(f"Item created, name : {name}")
 
     def calculate_total_price(self):
@@ -24,6 +28,12 @@ item1 = Item(
     name="Phone",
     price=1000,
     quantity=10
+)
+
+item2 = Item(
+    name="Laptop",
+    price=2000,
+    quantity=5
 )
 
 # print("this is without creating a instance variable", Item.pay_rate)
@@ -41,6 +51,18 @@ item1 = Item(
 
 # print(Item.__dict__) # this is for class level
 # print(item1.__dict__) # this is for object/instance level
-item1.pay_rate = 0.9
-print(item1.apply_discount())
+# item1.pay_rate = 0.9
+# print(item1.apply_discount())
 print(item1.price)
+
+print(item2.price)
+print("*********************")
+for instance in Item.all_classes:
+    print(instance.name)
+    print(instance.price)
+    print(instance.quantity)
+    print(instance.calculate_total_price())
+    print(instance.pay_rate)
+    print(instance.apply_discount())
+    print(instance.price)
+    print("*********************")
