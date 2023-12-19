@@ -3,7 +3,7 @@ import csv
 
 class Item:
     pay_rate = 0.8  # 20% discount on all items - this is a magic attribute / class attribute
-    all_classes = []  # this is a magic attribute / class attribute
+    all = []  # this is a magic attribute / class attribute
 
     def __init__(self, name: str, price: int, quantity: int):
         # data validation
@@ -15,7 +15,7 @@ class Item:
         self.price = price
         self.quantity = quantity
 
-        Item.all_classes.append(self)
+        Item.all.append(self)
 
         print(f"Item created, name : {name}")
 
@@ -29,7 +29,12 @@ class Item:
             items = list(reader)
 
         for item in items:
-            print(item)
+            Item(
+                name=item.get('name'),
+                price=float(item.get('price')),
+                quantity=int(item.get('quantity'))
+
+            )
 
     def apply_discount(self):
         self.price = self.price * self.pay_rate
@@ -39,3 +44,4 @@ class Item:
 
 
 Item.instantiate_from_csv()
+print(Item.all)
