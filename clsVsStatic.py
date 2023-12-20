@@ -36,6 +36,17 @@ class Item:
 
             )
 
+    @staticmethod
+    def is_integer(num):
+        # we will count out the floats that are point zer
+
+        if isinstance(num, float): # this will convert the float to int
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        return False
+
+
     def apply_discount(self):
         self.price = self.price * self.pay_rate
 
@@ -43,5 +54,7 @@ class Item:
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
 
-Item.instantiate_from_csv()
-print(Item.all)
+# Item.instantiate_from_csv()
+# print(Item.all)
+
+print(Item.is_integer(1.8))
