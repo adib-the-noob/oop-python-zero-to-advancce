@@ -1,5 +1,4 @@
 # when to use class method and static method
-import os
 import csv
 
 
