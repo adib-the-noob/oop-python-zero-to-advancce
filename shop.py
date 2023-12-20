@@ -27,17 +27,17 @@ class Item:
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
-item1 = Item(
-    name="Phone",
-    price=1000,
-    quantity=10
-)
-
-item2 = Item(
-    name="Laptop",
-    price=2000,
-    quantity=5
-)
+# item1 = Item(
+#     name="Phone",
+#     price=1000,
+#     quantity=10
+# )
+#
+# item2 = Item(
+#     name="Laptop",
+#     price=2000,
+#     quantity=5
+# )
 
 # print("this is without creating a instance variable", Item.pay_rate)
 # print()
@@ -56,17 +56,17 @@ item2 = Item(
 # print(item1.__dict__) # this is for object/instance level
 # item1.pay_rate = 0.9
 # print(item1.apply_discount())
-print(item1.price)
-
-print(item2.price)
-print(Item.all_classes)
-# print("*********************")
-# for instance in Item.all_classes:
-#     print(instance.name)
-#     print(instance.price)
-#     print(instance.quantity)
-#     print(instance.calculate_total_price())
-#     print(instance.pay_rate)
-#     print(instance.apply_discount())
-#     print(instance.price)
-#     print("*********************")
+# print(item1.price)
+#
+# print(item2.price)
+# print(Item.all_classes)
+# # print("*********************")
+# # for instance in Item.all_classes:
+# #     print(instance.name)
+# #     print(instance.price)
+# #     print(instance.quantity)
+# #     print(instance.calculate_total_price())
+# #     print(instance.pay_rate)
+# #     print(instance.apply_discount())
+# #     print(instance.price)
+# #     print("*********************")
