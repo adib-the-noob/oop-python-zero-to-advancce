@@ -2,15 +2,18 @@
 import os
 import csv
 
+
 class Person:
     def __init__(self):
         pass
+
     @staticmethod
     def is_age_valid(age):
         return 0 < age < 150
 
 
-print(Person.is_age_valid(35)) # this is a static method
+print(Person.is_age_valid(35))  # this is a static method
+
 
 class Database:
 
@@ -25,6 +28,7 @@ class Database:
             reader = csv.DictReader(csv_file)
             items = list(reader)
         return items
+
 
 Database.connect('db://localhost:5432')
 print(Database.read_csv('items.csv'))
